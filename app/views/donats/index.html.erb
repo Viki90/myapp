@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Donats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @donats.each do |donat| %>
+      <tr>
+        <td><%= donat.name %></td>
+        <td><%= donat.description %></td>
+        <td><%= image_tag(donat.picture_url)%></td>
+        <td><%= link_to 'Show', donat %></td>
+        <td><%= link_to 'Edit', edit_donat_path(donat) %></td>
+        <td><%= link_to 'Destroy', donat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Donat', new_donat_path %>

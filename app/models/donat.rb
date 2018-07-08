@@ -1,0 +1,2 @@
+class Donat < ApplicationRecord
+end
